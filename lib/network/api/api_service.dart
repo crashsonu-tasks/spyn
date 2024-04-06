@@ -1,14 +1,13 @@
 // All Flutter Built-in Imports Here.
 
 // All Custom Imports Here.
+import 'package:dio/dio.dart';
 
 // All Native Imports Here.
 
 // All Attributes or Constants Here.
 
-import 'package:dio/dio.dart';
-
-/// Api service to get data.
+/// Api service to get data form api call.
 final Dio _dio = Dio();
 
 Future getData() async {
@@ -17,9 +16,8 @@ Future getData() async {
         'https://devconnect.spyn.co/api/web/v4/homepage/index?venue_id=729');
 
     final data = response.data;
-    return data != null ? Map<String, dynamic>.from(data) : null;
+    return Map<String, dynamic>.from(data);
   } catch (error) {
-    print(error);
-    rethrow;
+    return {};
   }
 }
