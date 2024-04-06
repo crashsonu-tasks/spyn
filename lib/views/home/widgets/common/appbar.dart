@@ -19,10 +19,19 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return PreferredSize(
       preferredSize: preferredSize,
       child: Container(
-        color: Colors.white,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 0,
+              blurRadius: 2,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
         child: AppBar(
           backgroundColor: Colors.white,
-          elevation: 4,
           title: const ListTile(
             leading: Icon(
               Icons.circle_outlined,
@@ -32,7 +41,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             title: Text(
               'Home',
               style: TextStyle(
-                  fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+                  fontSize: 18,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
             ),
             subtitle: Text(
               'Star Academy',
@@ -40,32 +51,32 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
           actions: [
-            if(width>960)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'HOME',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 13),
-                  )),
-            ),
-            if(width>960)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'POSTS',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 15),
-                  )),
-            ),
+            if (width > 960)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'HOME',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontSize: 12),
+                    )),
+              ),
+            if (width > 960)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'POSTS',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontSize: 12),
+                    )),
+              ),
             Padding(
               padding: const EdgeInsets.only(right: 10, left: 5),
               child: OutlinedButton(

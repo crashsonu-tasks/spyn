@@ -67,13 +67,13 @@ DeviceScreenType getDeviceType(MediaQueryData mediaQuery) {
       ? mediaQuery.size.height
       : mediaQuery.size.width;
 
-  if (deviceWidth > 950) {
+  if (deviceWidth > 600) {
     return DeviceScreenType.desktop;
   }
 
-  if (deviceWidth > 600) {
-    return DeviceScreenType.tablet;
-  }
+  // if (deviceWidth > 600) {
+  //   return DeviceScreenType.tablet;
+  // }
 
   return DeviceScreenType.mobile;
 }
@@ -101,9 +101,9 @@ class ScreenTypeLayout extends StatelessWidget {
 
   const ScreenTypeLayout(
       {super.key,
-        required this.mobile,
-        required this.tablet,
-        required this.desktop});
+      required this.mobile,
+      required this.tablet,
+      required this.desktop});
 
   @override
   Widget build(BuildContext context) {

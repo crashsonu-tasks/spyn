@@ -11,6 +11,7 @@ import 'package:spyn/views/home/bloc/states.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   late Map<String, dynamic> appData;
+  List trialClasses = [];
 
   HomeCubit() : super(HomeInitialState()) {
     _init();
@@ -25,6 +26,8 @@ class HomeCubit extends Cubit<HomeState> {
     final res = await getData();
     if (res is Map<String, dynamic>) {
       appData = res;
+      List classes = res['trial_classes'];
+      trialClasses = classes;
       emit(HomeLoadedState());
       return res;
     }

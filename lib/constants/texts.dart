@@ -23,7 +23,7 @@ class AppText extends StatelessWidget {
     this.color = Colors.black,
     this.textSize,
     this.fontWeight,
-    this.overflow = TextOverflow.clip,
+    this.overflow = TextOverflow.ellipsis,
     this.selectable = true,
   });
 
@@ -37,7 +37,7 @@ class AppText extends StatelessWidget {
         color: color,
         fontSize: textSize == null
             ? width > 600
-                ? textSize ?? 16
+                ? textSize ?? 14
                 : 13
             : textSize!,
         overflow: overflow,
